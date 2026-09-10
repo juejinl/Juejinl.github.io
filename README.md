@@ -6,16 +6,15 @@
 
 解压后，双击 index.html，即可在电脑浏览器查看。网页没有外部字体、第三方脚本或安装依赖，断网也可以打开。
 
-## 替换现有 GitHub 网站
+## GitHub 简历网站
 
-1. 建议先从现有仓库下载旧版 index.html 作为备份。
-2. 打开自己的 juejinl.github.io 仓库，进入 Code 首页。
-3. 选择 Add file → Upload files，上传本压缩包解压后的 index.html。
-4. 文件必须位于仓库根目录，名称保持 index.html。不要上传 ZIP 本身或带有外层文件夹的文件。
-5. 确认提交到现有发布分支 main，点击 Commit changes。已有 Pages 设置可以继续使用。
-6. 发布完成后打开 https://juejinl.github.io/ 并刷新。
+1. 打开自己的 juejinl.github.io 仓库，进入 Code 首页。
+2. 选择 Add file → Upload files，上传index.html。
+3. 文件必须位于仓库根目录，名称保持 index.html。不要上传 ZIP 本身或带有外层文件夹的文件。
+4. 确认提交到现有发布分支 main，点击 Commit changes。已有 Pages 设置可以继续使用。
+5. 发布完成后打开 https://juejinl.github.io/ 并刷新。
 
-这是独立的单文件模板：样式和交互都已包含在 index.html 内。旧版 style.css、script.js、favicon.svg 不再被本页引用，可暂时留在仓库，不影响新版显示。
+这是独立的单文件模板：样式和交互都已包含在 index.html 内。
 
 ## 填写内容
 
