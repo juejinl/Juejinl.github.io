@@ -1,30 +1,60 @@
-# Juejin 个人简历网站
+# 学术简历网站模板
 
-纯 HTML、CSS 和 JavaScript，可直接部署到 GitHub Pages，也可双击 index.html 在本地查看。
+适用于 Juejin 的个人 GitHub Pages 网站。九个栏目：基本情况、教育经历、工作经历、研究方向、科研项目、论文、专利和软著、获奖情况、社会工作。
 
-## 发布
-1. 登录 GitHub，创建名为「你的用户名.github.io」的公开仓库。例如用户名为 juejin-demo，仓库名就是 juejin-demo.github.io。请使用你的真实 GitHub 用户名。
-2. 解压本压缩包，将 index.html、style.css、script.js、favicon.svg 和 README.md 上传到仓库根目录。不要上传 ZIP 本身，也不要把 index.html 放在多余的一层文件夹内。
-3. 在仓库 Settings → Pages 中选择 Deploy from a branch，分支 main，目录 /(root)，点击 Save。
-4. 等待发布完成；在 Settings → Pages 查看 GitHub 提供的网站链接。如失败，在 Actions 查看运行记录。
+## 打开预览
 
-## 修改
-- index.html：个人介绍、教育经历、研究方向、成果及联系方式。
-- style.css：颜色、字体、布局、手机适配及打印样式。
-- script.js：打印按钮与页脚年份。
-- favicon.svg：浏览器标签页图标。
+解压后，双击 index.html，即可在电脑浏览器查看。网页没有外部字体、第三方脚本或安装依赖，断网也可以打开。
 
-你可以直接在 GitHub 网页打开文件，点击编辑按钮修改，再 Commit changes 保存；推送到发布分支后，GitHub Pages 会更新网站。
+## 替换现有 GitHub 网站
 
-当前包含 Juejin、河海大学、博士生和水文水资源信息。其他个人信息明确标为待补充，请在发布前核对。默认 GitHub Pages 网站公开访问，请只上传希望公开的简历内容。
+1. 建议先从现有仓库下载旧版 index.html 作为备份。
+2. 打开自己的 juejinl.github.io 仓库，进入 Code 首页。
+3. 选择 Add file → Upload files，上传本压缩包解压后的 index.html。
+4. 文件必须位于仓库根目录，名称保持 index.html。不要上传 ZIP 本身或带有外层文件夹的文件。
+5. 确认提交到现有发布分支 main，点击 Commit changes。已有 Pages 设置可以继续使用。
+6. 发布完成后打开 https://juejinl.github.io/ 并刷新。
 
-## 添加 PDF 简历下载
-上传你的 resume.pdf 到根目录，并在 index.html 中合适位置加入：
+这是独立的单文件模板：样式和交互都已包含在 index.html 内。旧版 style.css、script.js、favicon.svg 不再被本页引用，可暂时留在仓库，不影响新版显示。
 
-<a href="./resume.pdf" download>下载简历 PDF</a>
+## 填写内容
 
-现有「打印 / 保存 PDF」按钮调用浏览器打印功能，与下载预先上传的 PDF 是两种不同功能。
+- 已使用会话中已知的 Juejin、河海大学、博士研究生、水文水资源信息，其余全部用方括号标注。
+- 在 GitHub 打开 index.html，点击铅笔按钮，搜索“基本情况”“教育经历”等 HTML 注释定位栏目。
+- 替换 [方括号] 中的内容，完成后删除方括号。不要修改标签结构，除非是在复制或删除条目。
+- 修改姓名时，同步修改页面 title、导航栏、基本情况、正文标题、页脚和简介 meta。
+- 完成全部内容后，可删除标有“完成填写后，可删除”的 template-note 提示行。
+- 无相关经历时，可将该栏内容改成“暂无”，保留栏目；直博等情况可删除不适用的教育条目。
 
-## 官方文档
-- https://docs.github.com/en/pages/quickstart
-- https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+## 增减条目
+
+- 教育经历、工作经历、研究方向、科研项目、获奖情况和社会工作：复制一个完整的 <article>...</article>，粘贴在同类容器内部，再填写内容。
+- 论文、专利和软著：复制一个完整的 <li>...</li>，放入对应列表。
+- 论文编号自动生成。论文作者顺序、发表状态、专利状态等请按实际记录填写。
+- 论文可以使用 <strong>你的姓名</strong> 加粗本人姓名；第一作者和通讯作者标记仅在实际适用时填写。
+- 专利的发明人与软件著作权的著作权人是不同字段，请按证书填写。
+- 如果删除整个栏目，同时删除左侧导航中对应的链接。
+
+## 邮箱和学术链接
+
+将邮箱占位内容替换为：
+
+<a href="mailto:你的真实邮箱">你的真实邮箱</a>
+
+将学术主页占位内容替换为：
+
+<a href="你的真实主页完整网址">Google Scholar / ORCID</a>
+
+网页文字里的 & 可写为 &amp;，< 可写为 &lt;，以避免被当成 HTML 语法。
+
+## 打印与 PDF
+
+点击“打印 / 保存 PDF”，在浏览器打印窗口选择“另存为 PDF”，纸张 A4；可关闭浏览器附加的页眉页脚。模板含专用打印样式，打印时隐藏目录并使用紧凑排版。可选“背景图形”，但正文不依赖背景色。
+
+## 调整样式
+
+颜色、字号和布局在 index.html 顶部的 <style> 中。主色由 --navy、--blue 控制。模板包含桌面、手机及打印布局。
+
+## 当前交付范围
+
+交付的是待填写的网站模板和操作说明，没有修改或发布到你的 GitHub 仓库。文件结构、九个栏目、内部链接和脚本语法已检查；未进行浏览器视觉测试。
